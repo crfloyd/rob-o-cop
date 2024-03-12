@@ -1,39 +1,41 @@
 import {
-  benefitIcon1,
-  benefitIcon2,
-  benefitIcon3,
-  benefitIcon4,
-  benefitImage2,
-  chromecast,
-  disc02,
+  ticketing,
   discord,
   discordBlack,
   facebook,
   figma,
-  file02,
   framer,
-  homeSmile,
   instagram,
-  notification2,
-  notification3,
-  notification4,
   notion,
   photoshop,
-  plusSquare,
   protopie,
   raindrop,
-  recording01,
-  recording03,
-  roadmap1,
-  roadmap2,
-  roadmap3,
-  roadmap4,
-  searchMd,
   slack,
-  sliders04,
   telegram,
   twitter,
-  yourlogo,
+  cyberk9,
+  dataDome,
+  neonGuard,
+  quantumNet,
+  synthWave,
+  donutIcon,
+  copIcon,
+  sheriffIcon,
+  reenactment,
+  fingerprinting,
+  polygraph,
+  encryption,
+  therapy,
+  service5,
+  dance1,
+  dance2,
+  dance3,
+  dance4,
+  dance5,
+  donut,
+  carScan,
+  uniformRepair,
+  sirenSongs,
 } from "../assets";
 
 export const navigation = [
@@ -43,106 +45,120 @@ export const navigation = [
     url: "#features",
   },
   {
+    id: "2",
+    title: "Services Offered",
+    url: "#services",
+  },
+  {
+    id: "3",
+    title: "roadmap",
+    url: "#roadmap",
+  },
+  {
     id: "1",
     title: "Pricing",
     url: "#pricing",
   },
   {
-    id: "2",
-    title: "How to contact",
-    url: "#how-to-contact",
-  },
-  {
-    id: "3",
-    title: "Design",
-    url: "#design",
-  },
-  {
     id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
+    title: "Music Player",
+    url: "#music",
+    onlyMobile: false,
   },
   {
     id: "5",
-    title: "Sign in",
-    url: "#login",
+    title: "Integrations",
+    url: "#integrations",
     onlyMobile: true,
   },
 ];
 
-export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
+export const notificationImages = [copIcon, donutIcon, sheriffIcon];
 
-export const notificationImages = [notification4, notification3, notification2];
-
-export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
-
-export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+export const companyLogos = [
+  {
+    name: "Cyber K9 Solutions",
+    description:
+      "Providers of robotic K-9 units for digital tracking and protection.",
+    image: cyberk9,
+  },
+  {
+    name: "Data Dome Defenders",
+    description:
+      "A company dedicated to securing personal data with dome-like encryption barriers.",
+    image: dataDome,
+  },
+  {
+    name: "Neon Guard Security",
+    description: "Specializing in neon-lit digital shields and cybersecurity",
+    image: neonGuard,
+  },
+  {
+    name: "Quantum Net Solutions",
+    description: "Focused on quantum encryption and network security",
+    image: quantumNet,
+  },
+  {
+    name: "Synth Wave Systems",
+    description:
+      "Innovators in AI-driven surveillance and law enforcement tools, with a retro-futuristic vibe",
+    image: synthWave,
+  },
 ];
 
-export const brainwaveServicesIcons = [
-  recording03,
-  recording01,
-  disc02,
-  chromecast,
-  sliders04,
-];
+export const danceImages = [service5, dance1, dance2, dance3, dance4, dance5];
 
 export const roadmap = [
   {
     id: "0",
-    title: "Voice recognition",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
-    date: "May 2023",
-    status: "done",
-    imageUrl: roadmap1,
-    colorful: true,
+    title: "Automatic Donut Dispenser",
+    text: "Craving a snack? Rob-O-Cop's automatic Donut Dispenser offers a lawful indulgence for those on-the-go moments. Taste the taste of justice and sustenance!",
+    date: "Dec 2023",
+    status: "progress",
+    imageUrl: donut,
   },
   {
     id: "1",
-    title: "Gamification",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
-    date: "May 2023",
+    title: "Voice-Activated Siren Songs",
+    text: "Need to clear traffic or soothe a situation? Rob-O-Cop's siren will soon include an array of voice-activated tunes, from calming melodies to authoritative anthems. Control the vibe of every ride.",
+    date: "May 2025",
     status: "progress",
-    imageUrl: roadmap2,
+    imageUrl: sirenSongs,
   },
   {
     id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
-    date: "May 2023",
+    title: "Contraband Scanning",
+    text: "Rob-O-Cop's Contraband Scanning feature will detect and report any illegal items, from weapons to unauthorized snacks. Keep your community safe and contraband-free.",
+    date: "March 2024",
     status: "done",
-    imageUrl: roadmap3,
+    imageUrl: carScan,
+    colorful: true,
   },
   {
     id: "3",
-    title: "Integration with APIs",
-    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-    date: "May 2023",
+    title: "Self-Repairing Uniforms",
+    text: "Combat wear and tear with nanotechnology. Rob-O-Cop's uniform will soon self-repair from damage, ensuring he always looks his best while on duty. Because presentation is key, even in law enforcement.",
+    date: "Aug 2028",
     status: "progress",
-    imageUrl: roadmap4,
+    imageUrl: uniformRepair,
   },
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Rob-O-Cop is designed to work seamlessly with your favorite apps. Whether you're a designer, developer, or a law enforcement officer, Rob-O-Cop has you covered.";
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
-    text: collabText,
+    title: "Justice",
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "Security",
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "Coffee and donuts",
   },
 ];
 
@@ -244,53 +260,47 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Cyber-Speed Ticketing",
+    text: "Blink and you'll miss it, but don't worry, our Rob-O-Cop never does. Catching speedsters in the data streams with unmatched efficiency.",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
-    iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    image: ticketing,
   },
   {
     id: "1",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    title: "Holographic Crime Scene Reenactments",
+    text: "Why rely on witness statements when you can watch a replay? Our Rob-O-Cop brings crime scenes to life with holographic precision.",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
-    iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
+    image: reenactment,
     light: true,
   },
   {
     id: "2",
-    title: "Connect everywhere",
-    text: "Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.",
+    title: "Digital Dusting for Fingerprints",
+    text: "Forget the brush and powder; our Rob-O-Cop scans for digital fingerprints on any device. Unauthorized access meets unmatched tracking.",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
-    iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
+    image: fingerprinting,
   },
   {
     id: "3",
-    title: "Fast responding",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "AI-Powered Lie Detection Interviews",
+    text: "Rob-O-Cop's built-in lie detector makes Pinocchio's nose look like child's play. Now featuring discomfort sensors for when subjects really start to squirm.",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
-    iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
     light: true,
+    image: polygraph,
   },
   {
     id: "4",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Quantum Encrypted Witness Protection",
+    text: "Keep your witnesses safer than ever in our quantum-encrypted safe houses. Not even Schrödinger's cat could find them.",
     backgroundUrl: "./src/assets/benefits/card-5.svg",
-    iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    image: encryption,
   },
   {
     id: "5",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    title: "Robo-Therapy Sessions for Cyber Criminals",
+    text: "Rehabilitation through algorithmic therapy sessions, tailored to the criminal's psyche. Rob-O-Cop turns lawbreakers into law-abiding citizens, one byte at a time.",
     backgroundUrl: "./src/assets/benefits/card-6.svg",
-    iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
+    image: therapy,
   },
 ];
 

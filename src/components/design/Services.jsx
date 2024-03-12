@@ -1,4 +1,4 @@
-import { brainwaveWhiteSymbol, gradient, play } from "../../assets";
+import { gradient, play } from "../../assets";
 import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
 
 export const Gradient = () => {
@@ -15,30 +15,36 @@ export const Gradient = () => {
   );
 };
 
-export const PhotChatMessage = () => {
+export const LawnMowerMessage = () => {
   return (
-    <div className="absolute top-8 right-8 max-w-[17.5rem] py-6 px-8 bg-black rounded-t-xl rounded-bl-xl font-code text-base lg:top-16 lg:right-[8.75rem] lg:max-w-[17.5rem]">
-      Hey Brainwave, enhance this photo
-      <ChatBubbleWing className="absolute left-full bottom-0" />
+    <div className="absolute top-2 right-[.125rem] w-full max-w-[8rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-xs md:text-base md:top-8 md:max-w-[17.5rem]">
+      Grass, meet cyber justice!
+      <p className="tagline absolute right-2.5 bottom-1 text-[0.625rem] text-n-3 uppercase">
+        ROB-O-COP
+      </p>
+      <ChatBubbleWing
+        className="absolute right-full bottom-0 -scale-x-100"
+        pathClassName="fill-n-6"
+      />
     </div>
   );
 };
 
-export const VideoChatMessage = () => {
+const messages = [
+  "Dance mode engaged!",
+  "Who's down for some justice?",
+  "Executing groove.exe",
+  "Rhythm protocol: Activated!",
+  "Shuffling rythms... Let's groove!",
+  "Error 404: Dance not found.",
+];
+
+export const DanceMessage = ({ index }) => {
+  const m = messages[index];
+  console.log(m);
   return (
-    <div className="absolute top-8 left-[3.125rem] w-full max-w-[14rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-base md:max-w-[17.5rem]">
-      Video generated!
-      <div className="absolute left-5 -bottom-[1.125rem] flex items-center justify-center w-[2.25rem] h-[2.25rem] bg-color-1 rounded-[0.75rem]">
-        <img
-          src={brainwaveWhiteSymbol}
-          width={26}
-          height={26}
-          alt="Brainwave"
-        />
-      </div>
-      <p className="tagline absolute right-2.5 bottom-1 text-[0.625rem] text-n-3 uppercase">
-        just now
-      </p>
+    <div className="absolute top-2 right-[.125rem] w-full max-w-[7rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-xs md:text-base md:top-8 md:max-w-[13.5rem]">
+      {m}
       <ChatBubbleWing
         className="absolute right-full bottom-0 -scale-x-100"
         pathClassName="fill-n-6"

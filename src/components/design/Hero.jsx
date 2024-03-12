@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
 
 import PlusSvg from "../../assets/svg/PlusSvg";
+import Music from "../MusicPlayer/Music";
 
 export const Gradient = () => {
   return (
@@ -96,6 +97,7 @@ export const BackgroundCircles = ({ parallaxRef }) => {
           />
         </div>
       </MouseParallax>
+      {/* <Music /> */}
     </div>
   );
 };

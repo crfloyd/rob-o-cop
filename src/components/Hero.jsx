@@ -1,13 +1,11 @@
-import { curve, heroBackground, robocopHero, robot } from "../assets";
-import Button from "./Button";
+import { curve, heroBackground, robocopHero } from "../assets";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
 import Generating from "./Generating";
-// import Notification from "./Notification";
-// import CompanyLogos from "./CompanyLogos";
+import Notification from "./Notification";
+import CompanyLogos from "./CompanyLogos";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -73,12 +71,12 @@ const Hero = () => {
                   </ul>
                 </ScrollParallax> */}
 
-                {/* <ScrollParallax isAbsolutelyPositioned>
+                <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Code generation"
+                    title="Cop For Hire"
                   />
-                </ScrollParallax> */}
+                </ScrollParallax>
               </div>
             </div>
 
@@ -97,7 +95,7 @@ const Hero = () => {
           <BackgroundCircles />
         </div>
 
-        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" /> */}
+        <CompanyLogos className="hidden relative z-10 mt-15 mb-5 lg:block" />
       </div>
 
       <BottomLine />
