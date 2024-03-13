@@ -18,8 +18,8 @@ const useMusic = () => {
       nextIdx = 0;
     }
 
-    setCurrentIndex(nextIdx);
     setCurrentSong(songs[nextIdx]);
+    setCurrentIndex(nextIdx);
   };
 
   const handlePlaySong = () => {

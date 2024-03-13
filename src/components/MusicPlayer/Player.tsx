@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEvent, ReactEventHandler, useState } from "react";
+import { ChangeEvent, ReactEventHandler, useEffect, useState } from "react";
 import {
   faPlay,
   faAngleLeft,
@@ -31,6 +31,15 @@ const Player = ({
     currentTime: 0,
     duration: 0,
   });
+  const [song, setSong] = useState<SongData>(currentSong);
+
+  useEffect(() => {
+    if (isPlaying && song.id !== currentSong.id) {
+      console.log("playing");
+      setSong(currentSong);
+      audioRef.current?.play();
+    }
+  }, [isPlaying, currentSong]);
 
   const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
 
@@ -115,7 +124,6 @@ const Player = ({
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => {
           onTrackSkipped(1);
-          handlePlaySong();
         }}
         onLoadedMetadata={handleTimeUpdate}
         onLoadedData={handleDataLoaded}

@@ -41,7 +41,6 @@ const messages = [
 
 export const DanceMessage = ({ index }) => {
   const m = messages[index];
-  console.log(m);
   return (
     <div className="absolute top-2 right-[.125rem] w-full max-w-[7rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-xs md:text-base md:top-8 md:max-w-[13.5rem]">
       {m}
