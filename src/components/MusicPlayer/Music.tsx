@@ -5,6 +5,7 @@ import Section from "../Section";
 import "./styles/app.scss";
 import { SongData } from "./data";
 import Song from "./Song";
+import Heading from "../Heading";
 
 const Music = ({
   currentIndex,
@@ -45,22 +46,27 @@ const Music = ({
       customPaddings
       id="music"
     >
+      {/* <Heading
+        className={"text-center "}
+        title="Now For Some Theme Music"
+        text="A crime fighter needs a theme song. Here's some of mine."
+      /> */}
       <div
-        className={`bg-gradient-to-r ${bgColor} player-bg md:ml-10 md:mr-10`}
+        className={`bg-gradient-to-r ${bgColor} player-bg md:ml-10 md:mr-10 lg:pt-5 lg:pb-3`}
       >
-        <div className="App">
-          {/* <Nav onLibraryClicked={handleLibraryClicked} /> */}
-          <Song currentSong={currentSong} isPlaying={isPlaying} />
-          <Player
-            currentSong={currentSong}
-            isPlaying={isPlaying}
-            onTrackSkipped={handleTrackSkipped}
-            sliderColor={sliderColor}
-            audioRef={audioRef}
-            handlePlaySong={handlePlaySong}
-            handlePauseSong={handlePauseSong}
-          />
-        </div>
+        {/* <div className="App"> */}
+        {/* <Nav onLibraryClicked={handleLibraryClicked} /> */}
+        <Song currentSong={currentSong} isPlaying={isPlaying} />
+        <Player
+          currentSong={currentSong}
+          isPlaying={isPlaying}
+          onTrackSkipped={handleTrackSkipped}
+          sliderColor={sliderColor}
+          audioRef={audioRef}
+          handlePlaySong={handlePlaySong}
+          handlePauseSong={handlePauseSong}
+        />
+        {/* </div> */}
       </div>
     </Section>
   );

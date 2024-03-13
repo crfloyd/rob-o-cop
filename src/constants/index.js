@@ -45,28 +45,23 @@ export const navigation = [
     url: "#features",
   },
   {
-    id: "2",
+    id: "1",
     title: "Services Offered",
     url: "#services",
   },
   {
-    id: "3",
+    id: "2",
     title: "roadmap",
     url: "#roadmap",
   },
   {
-    id: "1",
-    title: "Pricing",
-    url: "#pricing",
-  },
-  {
-    id: "4",
+    id: "3",
     title: "Music Player",
     url: "#music",
     onlyMobile: false,
   },
   {
-    id: "5",
+    id: "4",
     title: "Integrations",
     url: "#integrations",
     onlyMobile: true,
