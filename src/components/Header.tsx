@@ -6,8 +6,17 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import MusicButton from "./MusicPlayer/MusicButton";
+import { SongData } from "./MusicPlayer/data";
+import PlayButton from "./MusicPlayer/PlayButton";
 
-const Header = () => {
+interface Props {
+  handlePlaySong: () => void;
+  handlePauseSong: () => void;
+  isPlaying: boolean;
+}
+
+const Header = ({ handlePlaySong, handlePauseSong, isPlaying }: Props) => {
   const pathname = useLocation();
 
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -64,19 +73,29 @@ const Header = () => {
           </div>
           <HamburgerMenu />
         </nav>
-        <a
+        {/* <a
           href="#signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New account
-        </a>
-        <Button className="hidden lg:flex" href="#login">
+        </a> */}
+        {/* <Button className="hidden lg:flex" href="#login">
           Sign in
-        </Button>
+        </Button> */}
+        {/* <div className="z-50">
+          <MusicDrawer play={handlePlaySong} />
+        </div> */}
+        <PlayButton
+          play={handlePlaySong}
+          stop={handlePauseSong}
+          isPlaying={isPlaying}
+        />
         <Button
           className="ml-auto lg:hidden"
           px="px-3"
           onClick={toggleNavigation}
+          href={undefined}
+          white={false}
         >
           <MenuSvg openNavigation={openNavigation} />
         </Button>

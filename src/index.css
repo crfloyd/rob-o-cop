@@ -6,83 +6,149 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+
+
+* {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
     --font-sora: "Sora", sans-serif;
     --font-code: "Source Code Pro", monospace;
     --font-grotesk: "Space Grotesk", sans-serif;
     color-scheme: dark;
-}
 
-* {
-    scroll-behavior: smooth;
-}
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
 
-@layer base {
-    body {
-        @apply font-sans bg-n-8 text-n-1 text-base;
-    }
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply font-sans bg-n-8 text-n-1 text-base;
+  }
 }
 
 .rotate-45 {
-    @apply rotate-[45deg];
+  @apply rotate-[45deg];
 }
 
 .rotate-90 {
-    @apply rotate-[90deg];
+  @apply rotate-[90deg];
 }
 
 .rotate-135 {
-    @apply rotate-[135deg];
+  @apply rotate-[135deg];
 }
 
 .rotate-180 {
-    @apply rotate-[180deg];
+  @apply rotate-[180deg];
 }
 
 .rotate-225 {
-    @apply rotate-[225deg];
+  @apply rotate-[225deg];
 }
 
 .rotate-270 {
-    @apply rotate-[270deg];
+  @apply rotate-[270deg];
 }
 
 .rotate-315 {
-    @apply rotate-[315deg];
+  @apply rotate-[315deg];
 }
 
 .rotate-360 {
-    @apply rotate-[360deg];
+  @apply rotate-[360deg];
 }
 
 .-rotate-45 {
-    @apply rotate-[-45deg];
+  @apply rotate-[-45deg];
 }
 
 .-rotate-90 {
-    @apply rotate-[-90deg];
+  @apply rotate-[-90deg];
 }
 
 .-rotate-135 {
-    @apply rotate-[-135deg];
+  @apply rotate-[-135deg];
 }
 
 .-rotate-180 {
-    @apply rotate-[-180deg];
+  @apply rotate-[-180deg];
 }
 
 .-rotate-225 {
-    @apply rotate-[-225deg];
+  @apply rotate-[-225deg];
 }
 
 .-rotate-270 {
-    @apply rotate-[-270deg];
+  @apply rotate-[-270deg];
 }
 
 .-rotate-315 {
-    @apply rotate-[-315deg];
+  @apply rotate-[-315deg];
 }
 
 .-rotate-360 {
-    @apply rotate-[-360deg];
+  @apply rotate-[-360deg];
 }

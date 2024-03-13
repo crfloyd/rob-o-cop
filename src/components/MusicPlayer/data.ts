@@ -1,5 +1,15 @@
 import { v4 as uuidv4 } from "uuid";
-function getSongList() {
+
+export type SongData = {
+  name: string;
+  cover: string;
+  artist: string;
+  audio: string;
+  color: string | string[];
+  id: string;
+};
+
+export function getSongList(): SongData[] {
   return [
     {
       name: "MX 7000",
@@ -183,5 +193,3 @@ function getSongList() {
     },
   ];
 }
-
-export default getSongList;
