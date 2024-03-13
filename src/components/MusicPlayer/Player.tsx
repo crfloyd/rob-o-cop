@@ -1,11 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { ChangeEvent, ReactEventHandler, useState } from "react";
 import {
   faPlay,
   faAngleLeft,
   faAngleRight,
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
+import { SongData } from "./data";
+
+interface Props {
+  currentSong: SongData;
+  isPlaying: boolean;
+  handlePlaySong: () => void;
+  onTrackSkipped: (direction: number) => void;
+  sliderColor: string;
+  audioRef: React.RefObject<HTMLAudioElement>;
+}
 
 const Player = ({
   currentSong,
@@ -14,7 +24,7 @@ const Player = ({
   onTrackSkipped,
   sliderColor,
   audioRef,
-}) => {
+}: Props) => {
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
@@ -22,26 +32,32 @@ const Player = ({
 
   const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
 
-  const handleTimeUpdate = (e) => {
+  const handleTimeUpdate = (
+    e: React.SyntheticEvent<HTMLAudioElement, Event>
+  ) => {
+    const audioElement = e.target as HTMLAudioElement;
     setSongInfo({
       ...songInfo,
-      currentTime: Math.floor(e.target.currentTime),
-      duration: Math.floor(e.target.duration),
+      currentTime: Math.floor(audioElement.currentTime),
+      duration: Math.floor(audioElement.duration),
     });
   };
-  const formatTime = (time) => {
+  const formatTime = (time: number) => {
     if (!time) return "0:00";
     return (
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     );
   };
-  const handleDrag = (e) => {
-    audioRef.current.currentTime = e.target.value;
-    setSongInfo({ ...songInfo, currentTime: e.target.value });
+  const handleDrag = (e: ChangeEvent<HTMLInputElement>) => {
+    const currentTime = parseFloat(e.target.value);
+    if (audioRef.current) {
+      audioRef.current.currentTime = currentTime;
+    }
+    setSongInfo({ ...songInfo, currentTime });
   };
 
   const handleDataLoaded = () => {
-    if (isPlaying) {
+    if (isPlaying && audioRef.current) {
       audioRef.current.play();
     }
   };

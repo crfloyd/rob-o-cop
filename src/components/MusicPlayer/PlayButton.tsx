@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Button from "../Button";
 import { Noise } from "../../lib/noise";
 import { request } from "http";
+import { render } from "react-dom";
 
 interface Props {
   play: () => void;
@@ -35,15 +36,14 @@ const PlayButton = ({ play, isPlaying }: Props) => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
 
-  const render = () => {
-    const playing = isPlayingRef.current;
-    clear();
-    if (playing) {
-      console.log("drawing Wave");
-      drawWave(8);
-    }
-    requestRef.current = requestAnimationFrame(render);
-  };
+  //   const render = () => {
+  //     const playing = isPlayingRef.current;
+  //     clear();
+  //     if (playing) {
+  //       drawWave(8);
+  //     }
+  //     requestRef.current = requestAnimationFrame(render);
+  //   };
 
   function drawWave(n: number) {
     nt += 0.02;
@@ -66,14 +66,14 @@ const PlayButton = ({ play, isPlaying }: Props) => {
     context.fillRect(0, 0, w, h);
   }
 
-  useEffect(() => {
-    requestRef.current = requestAnimationFrame(render);
-    return () => {
-      if (requestRef.current) {
-        cancelAnimationFrame(requestRef.current);
-      }
-    };
-  }, []);
+  //   useEffect(() => {
+  //     requestRef.current = requestAnimationFrame(render);
+  //     return () => {
+  //       if (requestRef.current) {
+  //         cancelAnimationFrame(requestRef.current);
+  //       }
+  //     };
+  //   }, []);
 
   return (
     <div className="hidden lg:flex items-center justify-center flex-row">
