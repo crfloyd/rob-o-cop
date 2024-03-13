@@ -13,6 +13,7 @@ const Music = ({
   isPlaying,
   audioRef,
   handlePlaySong,
+  handlePauseSong,
 }: {
   currentIndex: number;
   handleTrackSkipped: (index: number) => void;
@@ -20,6 +21,7 @@ const Music = ({
   isPlaying: boolean;
   audioRef: React.RefObject<HTMLAudioElement>;
   handlePlaySong: () => void;
+  handlePauseSong: () => void;
 }) => {
   const [bgColor, setBgColor] = useState("gradient-1");
   const [sliderColor, setSliderColor] = useState("gradient-2");
@@ -56,6 +58,7 @@ const Music = ({
             sliderColor={sliderColor}
             audioRef={audioRef}
             handlePlaySong={handlePlaySong}
+            handlePauseSong={handlePauseSong}
           />
         </div>
       </div>

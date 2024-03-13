@@ -23,12 +23,8 @@ const useMusic = () => {
   };
 
   const handlePlaySong = () => {
-    if (isPlaying) {
-      audioRef.current?.pause();
-    } else {
-      audioRef.current?.play();
-    }
-    setIsPlaying(!isPlaying);
+    audioRef.current?.play();
+    setIsPlaying(true);
   };
 
   const handlePauseSong = () => {

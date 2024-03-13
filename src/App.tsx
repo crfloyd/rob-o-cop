@@ -39,6 +39,7 @@ const App = () => {
           isPlaying={isPlaying}
           audioRef={audioRef}
           handlePlaySong={handlePlaySong}
+          handlePauseSong={handlePauseSong}
         />
         <Contact />
         <Footer />

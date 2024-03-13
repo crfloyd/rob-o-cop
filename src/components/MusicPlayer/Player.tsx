@@ -12,6 +12,7 @@ interface Props {
   currentSong: SongData;
   isPlaying: boolean;
   handlePlaySong: () => void;
+  handlePauseSong: () => void;
   onTrackSkipped: (direction: number) => void;
   sliderColor: string;
   audioRef: React.RefObject<HTMLAudioElement>;
@@ -21,6 +22,7 @@ const Player = ({
   currentSong,
   isPlaying,
   handlePlaySong,
+  handlePauseSong,
   onTrackSkipped,
   sliderColor,
   audioRef,
@@ -94,7 +96,9 @@ const Player = ({
           className="play"
           size="2x"
           icon={isPlaying ? faPause : faPlay}
-          onClick={handlePlaySong}
+          onClick={() => {
+            isPlaying ? handlePauseSong() : handlePlaySong();
+          }}
         />
         <FontAwesomeIcon
           className="skip-forward"
@@ -109,7 +113,10 @@ const Player = ({
         src={currentSong.audio}
         ref={audioRef}
         onTimeUpdate={handleTimeUpdate}
-        onEnded={() => onTrackSkipped(1)}
+        onEnded={() => {
+          onTrackSkipped(1);
+          handlePlaySong();
+        }}
         onLoadedMetadata={handleTimeUpdate}
         onLoadedData={handleDataLoaded}
       ></audio>
