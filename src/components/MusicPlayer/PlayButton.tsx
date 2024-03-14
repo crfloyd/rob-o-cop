@@ -14,7 +14,7 @@ let w = 0;
 let h = 0;
 let nt = 0;
 
-const PlayButton = ({ play, isPlaying }: Props) => {
+const PlayButton = ({ play, stop, isPlaying }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
   const requestRef = useRef<number | undefined>();
@@ -66,6 +66,14 @@ const PlayButton = ({ play, isPlaying }: Props) => {
     context.fillRect(0, 0, w, h);
   }
 
+  function handleClick() {
+    if (isPlaying) {
+      stop();
+    } else {
+      play();
+    }
+  }
+
   //   useEffect(() => {
   //     requestRef.current = requestAnimationFrame(render);
   //     return () => {
@@ -79,7 +87,7 @@ const PlayButton = ({ play, isPlaying }: Props) => {
     <div className="hidden lg:flex items-center justify-center flex-row">
       <Button
         className="flex text-xs"
-        onClick={() => play()}
+        onClick={handleClick}
         px={isPlaying ? "px-10" : "px-3 "}
       >
         {isPlaying ? "Pause" : "Play Theme Music"}
