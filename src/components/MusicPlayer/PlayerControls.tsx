@@ -1,12 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEvent, ReactEventHandler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   faPlay,
   faAngleLeft,
   faAngleRight,
   faPause,
+  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { SongData } from "./data";
+import TimeSlider from "./TimeSlider";
 
 interface Props {
   currentSong: SongData;
@@ -41,8 +43,6 @@ const Player = ({
     }
   }, [isPlaying, currentSong]);
 
-  const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
-
   const handleTimeUpdate = (
     e: React.SyntheticEvent<HTMLAudioElement, Event>
   ) => {
@@ -53,19 +53,6 @@ const Player = ({
       duration: Math.floor(audioElement.duration),
     });
   };
-  const formatTime = (time: number) => {
-    if (!time) return "0:00";
-    return (
-      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
-    );
-  };
-  const handleDrag = (e: ChangeEvent<HTMLInputElement>) => {
-    const currentTime = parseFloat(e.target.value);
-    if (audioRef.current) {
-      audioRef.current.currentTime = currentTime;
-    }
-    setSongInfo({ ...songInfo, currentTime });
-  };
 
   const handleDataLoaded = () => {
     if (isPlaying && audioRef.current) {
@@ -75,48 +62,21 @@ const Player = ({
 
   return (
     <div className="player">
-      <div className="time-control">
-        <p>{formatTime(songInfo.currentTime || 0)}</p>
-        <div className={`track bg-gradient-to-r ${sliderColor}`}>
-          <input
-            min={0}
-            max={songInfo.duration || 0}
-            value={songInfo.currentTime || 0}
-            onChange={handleDrag}
-            type="range"
-          />
-          <div
-            className="animate-track"
-            style={{
-              transform: `translateX(${animationPercentage}%)`,
-            }}
-          ></div>
-        </div>
-        <p>{formatTime(songInfo.duration)}</p>
-      </div>
-      <div className="play-control">
-        <FontAwesomeIcon
-          className="skip-back"
-          size="2x"
-          icon={faAngleLeft}
-          onClick={() => onTrackSkipped(-1)}
-        />
-        <FontAwesomeIcon
-          className="play"
-          size="2x"
-          icon={isPlaying ? faPause : faPlay}
-          onClick={() => {
+      <TimeSlider
+        audioRef={audioRef}
+        currentSong={currentSong}
+        songInfo={songInfo}
+        setSongInfo={setSongInfo}
+      />
+      <div className="flex justify-between items-center p-4 mb-1 w-2/3 md:w-2/5 lg:w-1/5">
+        <PlayIcon i={faAngleLeft} f={() => onTrackSkipped(-1)} />
+        <PlayIcon
+          i={isPlaying ? faPause : faPlay}
+          f={() => {
             isPlaying ? handlePauseSong() : handlePlaySong();
           }}
         />
-        <FontAwesomeIcon
-          className="skip-forward"
-          size="2x"
-          icon={faAngleRight}
-          onClick={() => {
-            onTrackSkipped(1);
-          }}
-        />
+        <PlayIcon i={faAngleRight} f={() => onTrackSkipped(1)} />
       </div>
       <audio
         src={currentSong.audio}
@@ -129,6 +89,17 @@ const Player = ({
         onLoadedData={handleDataLoaded}
       ></audio>
     </div>
+  );
+};
+
+const PlayIcon = ({ i, f }: { i: IconDefinition; f: () => void }) => {
+  return (
+    <FontAwesomeIcon
+      className="cursor-pointer"
+      size="2x"
+      icon={i}
+      onClick={() => f()}
+    />
   );
 };
 

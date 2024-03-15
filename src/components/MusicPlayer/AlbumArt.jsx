@@ -1,4 +1,4 @@
-const Song = ({ currentSong, isPlaying }) => {
+const AlbumArt = ({ currentSong, isPlaying }) => {
   return (
     <div className="song-container ">
       <img
@@ -12,4 +12,4 @@ const Song = ({ currentSong, isPlaying }) => {
   );
 };
 
-export default Song;
+export default AlbumArt;

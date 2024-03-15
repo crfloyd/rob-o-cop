@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Player from "./Player";
-import Song from "./Song";
+import Player from "./PlayerControls";
+import AlbumArt from "./AlbumArt";
 import Library from "./Library";
 import Nav from "./Nav";
 import chillHop from "./data";
@@ -42,7 +42,7 @@ const LibraryWindow = () => {
   return (
     <div className="App">
       <Nav onLibraryClicked={handleLibraryClicked} />
-      <Song currentSong={currentSong} />
+      <AlbumArt currentSong={currentSong} />
       <Player
         currentSong={currentSong}
         isPlaying={isPlaying}

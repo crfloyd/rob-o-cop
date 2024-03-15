@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Player from "./Player";
+import Player from "./PlayerControls";
 import Section from "../Section";
 
 import "./styles/app.scss";
 import { SongData } from "./data";
-import Song from "./Song";
+import AlbumArt from "./AlbumArt";
 import Heading from "../Heading";
 
 const Music = ({
@@ -56,7 +56,7 @@ const Music = ({
       >
         {/* <div className="App"> */}
         {/* <Nav onLibraryClicked={handleLibraryClicked} /> */}
-        <Song currentSong={currentSong} isPlaying={isPlaying} />
+        <AlbumArt currentSong={currentSong} isPlaying={isPlaying} />
         <Player
           currentSong={currentSong}
           isPlaying={isPlaying}

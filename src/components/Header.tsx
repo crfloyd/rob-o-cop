@@ -6,9 +6,8 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import MusicButton from "./MusicPlayer/MusicButton";
-import { SongData } from "./MusicPlayer/data";
 import PlayButton from "./MusicPlayer/PlayButton";
+import MusicSign from "./MusicPlayer/MusicSign";
 
 interface Props {
   handlePlaySong: () => void;
@@ -45,9 +44,11 @@ const Header = ({ handlePlaySong, handlePauseSong, isPlaying }: Props) => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={robocop} width={195} height={45} alt="" />
-        </a>
+        <div className={isPlaying ? "siren-container" : ""}>
+          <a className="block w-[12rem] xl:mr-8" href="#hero">
+            <img src={robocop} width={200} height={50} alt="" />
+          </a>
+        </div>
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
@@ -85,11 +86,20 @@ const Header = ({ handlePlaySong, handlePauseSong, isPlaying }: Props) => {
         {/* <div className="z-50">
           <MusicDrawer play={handlePlaySong} />
         </div> */}
-        <PlayButton
-          play={handlePlaySong}
-          stop={handlePauseSong}
-          isPlaying={isPlaying}
-        />
+        {isPlaying ? (
+          <MusicSign
+            isPlaying={isPlaying}
+            play={handlePlaySong}
+            stop={handlePauseSong}
+          />
+        ) : (
+          <PlayButton
+            play={handlePlaySong}
+            stop={handlePauseSong}
+            isPlaying={isPlaying}
+          />
+        )}
+
         <Button
           className="ml-auto lg:hidden"
           px="px-3"

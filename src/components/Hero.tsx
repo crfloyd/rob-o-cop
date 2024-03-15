@@ -59,8 +59,6 @@ const Hero = () => {
                   height={490}
                 />
 
-                {/* <Generating className="absolute left-4 right-4 bottom-0.5 md:left-1/2 md:right-auto md:bottom-0.5 md:w-[31rem] md:-translate-x-1/2" /> */}
-
                 {/* <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
@@ -92,7 +90,7 @@ const Hero = () => {
             />
           </div>
 
-          <BackgroundCircles />
+          <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
 
         <CompanyLogos className="hidden relative z-10 mt-15 mb-5 lg:block" />

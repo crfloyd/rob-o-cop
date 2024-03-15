@@ -88,6 +88,8 @@ export default {
         sans: ["var(--font-sora)", ...fontFamily.sans],
         code: "var(--font-code)",
         grotesk: "var(--font-grotesk)",
+        neon: "var(--font-neon)",
+        borel: "var(--font-borel)",
       },
       keyframes: {
         "accordion-down": {
@@ -194,6 +196,10 @@ export default {
         },
         ".button": {
           "@apply font-code text-xs font-bold uppercase tracking-wider": {},
+        },
+        ".neon": {
+          "@apply font-neon": {},
+          // "@apply font-borel": {},
         },
       });
       addUtilities({
