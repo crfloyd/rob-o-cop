@@ -64,7 +64,7 @@ export const navigation = [
     id: "4",
     title: "Integrations",
     url: "#integrations",
-    onlyMobile: true,
+    onlyMobile: false,
   },
 ];
 

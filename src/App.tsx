@@ -1,13 +1,13 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
 
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Hero from "./components/Hero/Hero";
 import Features from "./components/Features";
 import Services from "./components/Services";
 import ComingSoon from "./components/ComingSoon";
 import Music from "./components/MusicPlayer/Music";
 import Footer from "./components/Footer";
-import Contact from "./components/Contact";
+import Integrations from "./components/Contact";
 import useMusic from "./hooks/useMusic";
 
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
           handlePlaySong={handlePlaySong}
           handlePauseSong={handlePauseSong}
         />
-        <Contact />
+        <Integrations />
         <Footer />
       </div>
       <ButtonGradient />

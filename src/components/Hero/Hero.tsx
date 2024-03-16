@@ -1,10 +1,10 @@
-import { curve, heroBackground, robocopHero } from "../assets";
-import Section from "./Section";
-import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
+import { curve, heroBackground, robocopHero } from "../../assets";
+import Section from "../Section";
+import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
-import Generating from "./Generating";
-import Notification from "./Notification";
+import Generating from "../Shared/Generating";
+import Notification from "../Notification";
 import CompanyLogos from "./CompanyLogos";
 
 const Hero = () => {
@@ -96,7 +96,7 @@ const Hero = () => {
         <CompanyLogos className="hidden relative z-10 mt-15 mb-5 lg:block" />
       </div>
 
-      <BottomLine />
+      {/* <BottomLine /> */}
     </Section>
   );
 };

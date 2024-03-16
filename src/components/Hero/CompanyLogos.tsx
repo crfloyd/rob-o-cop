@@ -1,4 +1,4 @@
-import { companyLogos } from "../constants";
+import { companyLogos } from "../../constants";
 import { Tooltip } from "react-tooltip";
 
 const CompanyLogos = ({ className }: { className: string }) => {

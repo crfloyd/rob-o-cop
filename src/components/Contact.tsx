@@ -3,9 +3,14 @@ import { collabApps, collabContent, collabText } from "../constants";
 import Section from "./Section";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
 
-const Contact = () => {
+const Integrations = () => {
   return (
-    <Section id="integrations" crosses className="mt-5">
+    <Section
+      id="integrations"
+      customPaddings
+      crosses
+      className="pt-[5.5rem] md:pt-[6.5rem]"
+    >
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
           <h2 className="h2 mb-4 md:mb-8">Shutdown Sequence Initiated</h2>
@@ -83,4 +88,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Integrations;

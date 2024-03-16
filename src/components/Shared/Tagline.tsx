@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import brackets from "../assets/svg/Brackets";
+import brackets from "../../assets/svg/Brackets";
 
 const TagLine = ({
   className,

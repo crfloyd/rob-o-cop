@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Button from "../Button";
+import Button from "../Shared/Button";
 import { Noise } from "../../lib/noise";
 import { request } from "http";
 import { render } from "react-dom";

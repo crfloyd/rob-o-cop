@@ -2,7 +2,7 @@ import { robocop } from "../assets";
 import { navigation } from "../constants";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "./Shared/Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";

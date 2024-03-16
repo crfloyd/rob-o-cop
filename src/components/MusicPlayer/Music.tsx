@@ -39,22 +39,15 @@ const Music = ({
 
   return (
     <Section
-      className="pt-[7rem] -mt-[7.55rem] -md:mt-[2rem] md:pt-[7rem] lg:pt-32"
+      className="pt-[7rem] -mt-[7.55rem] -md:mt-[2rem] md:pt-[6rem] md:pb-[1rem]"
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       id="music"
       customPaddings
     >
-      {/* <Heading
-        className={"text-center "}
-        title="Now For Some Theme Music"
-        text="A crime fighter needs a theme song. Here's some of mine."
-      /> */}
       <div
         className={`bg-gradient-to-r ${bgColor} player-bg md:ml-10 md:mr-10 lg:pt-5 lg:pb-3`}
       >
-        {/* <div className="App"> */}
-        {/* <Nav onLibraryClicked={handleLibraryClicked} /> */}
         <AlbumArt currentSong={currentSong} isPlaying={isPlaying} />
         <Player
           currentSong={currentSong}
@@ -65,7 +58,6 @@ const Music = ({
           handlePlaySong={handlePlaySong}
           handlePauseSong={handlePauseSong}
         />
-        {/* </div> */}
       </div>
     </Section>
   );
