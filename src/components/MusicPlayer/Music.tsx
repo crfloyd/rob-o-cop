@@ -5,7 +5,6 @@ import Section from "../Section";
 import "./styles/app.scss";
 import { SongData } from "./data";
 import AlbumArt from "./AlbumArt";
-import Heading from "../Heading";
 
 const Music = ({
   currentIndex,
@@ -43,8 +42,8 @@ const Music = ({
       className="pt-[7rem] -mt-[7.55rem] -md:mt-[2rem] md:pt-[7rem] lg:pt-32"
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
-      customPaddings
       id="music"
+      customPaddings
     >
       {/* <Heading
         className={"text-center "}

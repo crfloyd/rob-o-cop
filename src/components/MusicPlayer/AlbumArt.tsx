@@ -1,4 +1,12 @@
-const AlbumArt = ({ currentSong, isPlaying }) => {
+import { SongData } from "./data";
+
+const AlbumArt = ({
+  currentSong,
+  isPlaying,
+}: {
+  currentSong: SongData;
+  isPlaying: boolean;
+}) => {
   return (
     <div className="song-container ">
       <img

@@ -17,9 +17,9 @@ const Contact = () => {
                   <img src={check} width={24} height={24} alt="check" />
                   <h6 className="body-2 ml-5">{item.title}</h6>
                 </div>
-                {item.text && (
+                {/* {item.text && (
                   <p className="body-2 mt-3 text-n-4">{item.text}</p>
-                )}
+                )} */}
               </li>
             ))}
           </ul>

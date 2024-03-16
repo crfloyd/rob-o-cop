@@ -8,7 +8,7 @@ import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 
 const Hero = () => {
-  const parallaxRef = useRef(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
   return (
     <Section
       className="pt-[9rem] -mt-[5.55rem] -md:mt-[1.25rem] md:pt-[6rem] lg:pt-32"

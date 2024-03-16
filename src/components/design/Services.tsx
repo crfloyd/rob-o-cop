@@ -3,7 +3,10 @@ import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
 
 export const Gradient = () => {
   return (
-    <div className="absolute top-0 -left-[10rem] w-[56.625rem] h-[56.625rem] opacity-50 mix-blend-color-dodge pointer-events-none">
+    <div
+      id="services-gradient"
+      className="absolute top-0 -left-[10rem] w-[31.625rem] h-[2.625rem] opacity-50 mix-blend-color-dodge pointer-events-none"
+    >
       <img
         className="absolute top-1/2 left-1/2 w-[79.5625rem] max-w-[79.5625rem] h-[88.5625rem] -translate-x-1/2 -translate-y-1/2"
         src={gradient}
@@ -39,7 +42,7 @@ const messages = [
   "Error 404: Dance not found.",
 ];
 
-export const DanceMessage = ({ index }) => {
+export const DanceMessage = ({ index }: { index: number }) => {
   const m = messages[index];
   return (
     <div className="absolute top-2 right-[.125rem] w-full max-w-[7rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-xs md:text-base md:top-8 md:max-w-[13.5rem]">

@@ -1,7 +1,7 @@
 import { companyLogos } from "../constants";
 import { Tooltip } from "react-tooltip";
 
-const CompanyLogos = ({ className }) => {
+const CompanyLogos = ({ className }: { className: string }) => {
   return (
     <div className={className}>
       <h5 className="tagline mb-6 text-center text-n-1/50">

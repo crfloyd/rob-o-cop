@@ -1,7 +1,13 @@
 import { badgeIcon } from "../assets";
 import { notificationImages } from "../constants";
 
-const Notification = ({ className, title }) => {
+const Notification = ({
+  className,
+  title,
+}: {
+  className: string;
+  title: string;
+}) => {
   return (
     <div
       className={`${

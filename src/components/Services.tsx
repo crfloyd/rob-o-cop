@@ -2,12 +2,7 @@ import Section from "./Section";
 import Heading from "./Heading";
 import { service1, service2, service3, service4 } from "../assets";
 import { danceImages } from "../constants";
-import {
-  DanceMessage,
-  //   PhotoChatMessage,
-  Gradient,
-  LawnMowerMessage,
-} from "./design/Services";
+import { DanceMessage, Gradient, LawnMowerMessage } from "./design/Services";
 import { useState } from "react";
 
 // import Generating from "./Generating";
@@ -15,12 +10,17 @@ import { useState } from "react";
 const Services = () => {
   const [danceImage, setDanceImage] = useState(0);
 
-  const onDanceImageChange = (index) => {
+  const onDanceImageChange = (index: number) => {
     setDanceImage(index);
   };
 
   return (
-    <Section id="services" crosses crossesOffset="lg:translate-y-[5.25rem]">
+    <Section
+      id="services"
+      crosses
+      // customPaddings
+      crossesOffset="lg:translate-y-[6.25rem] "
+    >
       {/* Row 1 */}
       <div className="container mt-8">
         <Heading
