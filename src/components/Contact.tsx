@@ -49,7 +49,11 @@ const Contact = () => {
               rob@rob-o-cop.com
             </a>
           </h4>
-          <ContactForm />
+          {!isFormSubmitted ? (
+            <ContactForm setIsFormSubmitted={setIsFormSubmitted} />
+          ) : (
+            <div>Thanks!</div>
+          )}
         </div>
         <div className="max-w-[46rem] lg:ml-auto">
           <div className=" mb-10 md:mb-14 ">
@@ -68,7 +72,11 @@ const Contact = () => {
   );
 };
 
-const ContactForm = () => {
+const ContactForm = ({
+  setIsFormSubmitted,
+}: {
+  setIsFormSubmitted: (s: boolean) => void;
+}) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -79,7 +87,7 @@ const ContactForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("onSubmit", values);
+    setIsFormSubmitted(true);
   }
 
   return (
