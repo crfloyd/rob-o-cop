@@ -7,9 +7,10 @@ export const onRequest = mailchannelsPlugin({
     },
   ],
   from: { name: "Enquiry", email: "no-reply@example.com" },
-  respondWith: () =>
-    new Response(null, {
-      status: 302,
-      headers: { Location: "/thank-you" },
-    }),
+  respondWith: () => {
+    console.log("Sending email");
+    return new Response(
+      `Thank you for submitting your enquiry. A member of the team will be in touch shortly.`
+    );
+  },
 });
