@@ -72,6 +72,7 @@ import sirenSongs from "./roadmap/siren-songs.webp";
 import policeCar from "./police-car.svg";
 
 import badge from "./badge.webp";
+import leaningOnCar from "./leaning-on-car.webp";
 
 export {
   robocop,
@@ -138,4 +139,5 @@ export {
   sirenSongs,
   badge,
   policeCar,
+  leaningOnCar,
 };

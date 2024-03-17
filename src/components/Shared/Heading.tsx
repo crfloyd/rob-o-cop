@@ -1,4 +1,4 @@
-import TagLine from "./Shared/Tagline";
+import TagLine from "./Tagline";
 
 const Heading = ({
   className,

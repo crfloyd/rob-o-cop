@@ -66,6 +66,12 @@ export const navigation = [
     url: "#integrations",
     onlyMobile: false,
   },
+  {
+    id: "5",
+    title: "Contact",
+    url: "#contact",
+    onlyMobile: false,
+  },
 ];
 
 export const notificationImages = [copIcon, donutIcon, sheriffIcon];

@@ -1,5 +1,5 @@
 import { benefits } from "../constants";
-import Heading from "./Heading";
+import Heading from "./Shared/Heading";
 import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";

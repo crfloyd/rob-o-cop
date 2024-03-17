@@ -1,4 +1,4 @@
-import Heading from "./Heading";
+import Heading from "./Shared/Heading";
 import Section from "./Section";
 import Tagline from "./Shared/Tagline";
 import { roadmap } from "../constants";

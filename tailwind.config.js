@@ -8,6 +8,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./public/assets/**/*.{js,ts,jsx,tsx}",
+    "./functions/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     container: {

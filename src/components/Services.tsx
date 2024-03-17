@@ -1,5 +1,5 @@
 import Section from "./Section";
-import Heading from "./Heading";
+import Heading from "./Shared/Heading";
 import { service1, service2, service3, service4 } from "../assets";
 import { danceImages } from "../constants";
 import { DanceMessage, Gradient, LawnMowerMessage } from "./design/Services";
