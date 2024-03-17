@@ -59,6 +59,7 @@ import benefitCard3 from "./benefits/card-3.svg";
 import benefitCard4 from "./benefits/card-4.svg";
 import benefitCard5 from "./benefits/card-5.svg";
 import benefitCard6 from "./benefits/card-6.svg";
+import benefitImage from "./benefits/benefit-background.png";
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
@@ -123,6 +124,7 @@ export {
   benefitCard4,
   benefitCard5,
   benefitCard6,
+  benefitImage,
   discordBlack,
   facebook,
   instagram,
