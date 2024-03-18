@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@cloudflare/pages-plugin-mailchannels": "^0.1.2",
+    "@cloudflare/pages-plugin-static-forms": "^1.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -38,6 +39,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240314.0",
     "@types/node": "^20.11.26",
     "@types/noisejs": "^0.0.31",
     "@types/react": "^18.2.65",
