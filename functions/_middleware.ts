@@ -2,9 +2,8 @@ import mailchannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
 import staticFormsPlugin from "@cloudflare/pages-plugin-static-forms";
 import { PagesFunction } from "@cloudflare/workers-types";
 
-export const onRequest: PagesFunction = (context) => {
-  console.log("FUNCTION - onRequest", context);
-  return mailchannelsPlugin({
+export const onRequest: PagesFunction = (context) =>
+  mailchannelsPlugin({
     personalizations: [
       {
         to: [{ name: "Rob-O-Cop", email: "rob@rob-o-cop.com" }],
@@ -25,8 +24,7 @@ export const onRequest: PagesFunction = (context) => {
         },
       });
     },
-  })(context);
-};
+  });
 
 // export const onRequest = mailchannelsPlugin({
 //   personalizations: [
