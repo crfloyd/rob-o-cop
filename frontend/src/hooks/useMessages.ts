@@ -41,7 +41,12 @@ const useMessages = () => {
     try {
       const resp = await addMessageAsync(message);
       console.log("added message:", resp);
-      setMessages((prev) => [message, ...prev]);
+      let slicedMessages = [message, ...messages];
+      if (slicedMessages.length >= 5) {
+        slicedMessages = [...slicedMessages.slice(0, 4)];
+      }
+      //   setMessages((prev) => [message, ...prev]);
+      setMessages(slicedMessages);
     } catch (error) {
       console.error(error);
     }

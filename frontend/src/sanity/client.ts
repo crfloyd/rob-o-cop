@@ -22,7 +22,8 @@ const baseClient = client2({
 
 export const queryMessagesAsync = async (from = 0, to = 5) =>
   client.fetch(
-    `*[_type == "comment"] | order(_createdAt desc) [${from}...${to}] {body, email, name, _createdAt}`
+    //`*[_type == "comment"] | order(_createdAt desc) [${from}...${to}] {body, email, name, _createdAt}`
+    `*[_type == "comment"] | order(_createdAt desc) {body, email, name, _createdAt}`
   );
 
 export const addMessageAsync = async (comment: {
