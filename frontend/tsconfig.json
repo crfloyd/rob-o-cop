@@ -17,9 +17,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@sanity/*": ["../studio/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "../studio/sanity.config.ts"],
+  "exclude": ["functions/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

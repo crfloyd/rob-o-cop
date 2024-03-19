@@ -11,7 +11,7 @@ const Integrations = () => {
       crosses
       className="pt-[5.5rem] md:pt-[6.5rem]"
     >
-      <div className="container lg:flex">
+      <div className="container lg:flex lg:mb-10">
         <div className="max-w-[25rem]">
           <h2 className="h2 mb-4 md:mb-8">Shutdown Sequence Initiated</h2>
 
