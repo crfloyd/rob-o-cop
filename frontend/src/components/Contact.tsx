@@ -66,7 +66,7 @@ const Contact = () => {
 
   const { messages, isLoading, addMessage } = useMessages();
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 3500, stopOnInteraction: true })
   );
   // const [messages, setMessages] = useState<
   //   { email: string | null; name: string | null; message: string | null }[]
