@@ -20,7 +20,7 @@ const baseClient = client2({
   token: import.meta.env.VITE_SANITY_API_TOKEN,
 });
 
-export const queryMessagesAsync = async (from = 0, to = 5) =>
+export const queryMessagesAsync = async (from = 0, to = 10) =>
   baseClient.fetch(
     `*[_type == "comment"] | order(_createdAt desc) [${from}...${to}] {body, email, name, _createdAt}`
     // `*[_type == "comment"] | order(_createdAt desc) {body, email, name, _createdAt}`

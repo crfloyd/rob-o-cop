@@ -37,6 +37,12 @@ const colorGradients = [
   cn("from-pink-500 via-purple-500 to-indigo-500"),
   cn("from-yellow-500 via-red-500 to-pink-500"),
   cn("from-green-500 via-blue-500 to-indigo-500"),
+  cn("from-blue-600 via-green-500 to-indigo-400"),
+  cn("from-yellow-400 via-red-500 to-pink-500"),
+  cn("from-green-500 via-blue-500 to-indigo-500"),
+  cn("from-pink-500 via-purple-500 to-indigo-500"),
+  cn("from-yellow-500 via-red-500 to-pink-500"),
+  cn("from-green-500 via-blue-500 to-indigo-500"),
 ];
 
 const formSchema = z.object({
@@ -46,7 +52,7 @@ const formSchema = z.object({
       message: "Name must be at least 2 characters.",
     })
     .max(50),
-  email: z.string().email(),
+  // email: z.string().email(),
   message: z
     .string()
     .min(5, {
@@ -149,8 +155,8 @@ const Contact = () => {
                           <h1
                             className={`text-3xl font-semibold flex-wrap bg-gradient-to-r ${colorGradients[idx]} text-transparent bg-clip-text`}
                           >
-                            {message.body.slice(0, 30)}
-                            {message.body.length > 30 ? "..." : ""}
+                            {message.body.slice(0, 50)}
+                            {message.body.length > 50 ? "..." : ""}
                           </h1>
                           <span className="text-xl text-n-2">
                             - {message.name.slice(0, 10)}
@@ -196,7 +202,7 @@ const ContactForm = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      email: "",
+      // email: "",
       message: "",
     },
   });
@@ -204,7 +210,7 @@ const ContactForm = ({
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     addMessage({
       name: values.name,
-      email: values.email,
+      email: "",
       body: values.message,
       createdAt: new Date(),
     });
@@ -235,7 +241,7 @@ const ContactForm = ({
             </FormItem>
           )}
         />
-        <FormField
+        {/* <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
@@ -244,11 +250,10 @@ const ContactForm = ({
               <FormControl>
                 <Input placeholder="Enter your email address" {...field} />
               </FormControl>
-              {/* <FormDescription>Please enter your name.</FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
         <FormField
           control={form.control}
           name="message"
