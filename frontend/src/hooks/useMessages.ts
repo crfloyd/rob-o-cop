@@ -1,6 +1,5 @@
 import { queryMessagesAsync, addMessageAsync } from "@/sanity/client";
 import { useCallback, useEffect, useState } from "react";
-import { set } from "zod";
 
 export interface Message {
   email: string;
@@ -17,14 +16,21 @@ const useMessages = () => {
     console.log("fetching messages");
     setIsLoading(true);
     const resp = await queryMessagesAsync();
-    const data: Message[] = resp.map((m) => {
-      return {
-        email: m.email ?? "",
-        name: m.name ?? "",
-        body: m.body ?? "",
-        createdAt: new Date(m._createdAt),
-      };
-    });
+    const data: Message[] = resp.map(
+      (m: {
+        email: string | null;
+        name: string | null;
+        body: string | null;
+        _createdAt: string;
+      }) => {
+        return {
+          email: m.email ?? "",
+          name: m.name ?? "",
+          body: m.body ?? "",
+          createdAt: new Date(m._createdAt),
+        };
+      }
+    );
     // console.log("messages:", data);
     setMessages(data);
     setIsLoading(false);
@@ -41,12 +47,12 @@ const useMessages = () => {
     try {
       const resp = await addMessageAsync(message);
       console.log("added message:", resp);
-      let slicedMessages = [message, ...messages];
-      if (slicedMessages.length >= 5) {
-        slicedMessages = [...slicedMessages.slice(0, 4)];
-      }
-      //   setMessages((prev) => [message, ...prev]);
-      setMessages(slicedMessages);
+      //   let slicedMessages = [message, ...messages];
+      //   if (slicedMessages.length >= 5) {
+      //     slicedMessages = [...slicedMessages.slice(0, 4)];
+      //   }
+      setMessages((prev) => [message, ...prev]);
+      //   setMessages(slicedMessages);
     } catch (error) {
       console.error(error);
     }

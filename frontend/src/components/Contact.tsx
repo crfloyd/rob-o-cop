@@ -28,6 +28,16 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import SectionSvg from "@/assets/svg/SectionSvg";
 import { ScrollParallax } from "react-just-parallax";
+import { cn } from "@/lib/utils";
+
+const colorGradients = [
+  cn("from-blue-600 via-green-500 to-indigo-400"),
+  cn("from-yellow-400 via-red-500 to-pink-500"),
+  cn("from-green-500 via-blue-500 to-indigo-500"),
+  cn("from-pink-500 via-purple-500 to-indigo-500"),
+  cn("from-yellow-500 via-red-500 to-pink-500"),
+  cn("from-green-500 via-blue-500 to-indigo-500"),
+];
 
 const formSchema = z.object({
   name: z
@@ -115,21 +125,33 @@ const Contact = () => {
           <Carousel
             plugins={[plugin.current]}
             className=" w-full "
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
+            onMouseEnter={() => {
+              console.log("mouse enter");
+              plugin.current.stop();
+            }}
+            // onMouseOut={() => console.log("mouse out")}
+            onMouseLeave={() => {
+              console.log("mouse leave");
+              plugin.current.play();
+            }}
           >
             <CarouselContent className="mt-8">
               {/* <div className="flex mt-10 gap-2"> */}
               {!isLoading &&
-                messages.map((message) => (
-                  <CarouselItem className="lg:pl-4">
+                messages.map((message, idx) => (
+                  <CarouselItem
+                    key={message.createdAt.toISOString()}
+                    className="lg:pl-4"
+                  >
                     <div className="lg:p-1">
                       <Card>
                         <CardContent className="flex flex-col gap-10 aspect-square items-center justify-center p-6">
-                          <span className="text-3xl font-semibold flex-wrap text-n-1">
+                          <h1
+                            className={`text-3xl font-semibold flex-wrap bg-gradient-to-r ${colorGradients[idx]} text-transparent bg-clip-text`}
+                          >
                             {message.body.slice(0, 30)}
                             {message.body.length > 30 ? "..." : ""}
-                          </span>
+                          </h1>
                           <span className="text-xl text-n-2">
                             - {message.name.slice(0, 10)}
                             {message.name.length > 10 ? "..." : ""}

@@ -18,10 +18,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@sanity/*": ["../studio/*"]
+      "@studio/*": ["../studio/*"]
     }
   },
-  "include": ["src", "../studio/sanity.config.ts"],
+  "include": ["src"],
   "exclude": ["functions/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
