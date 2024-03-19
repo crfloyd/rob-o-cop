@@ -24,6 +24,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@sanity": path.resolve(__dirname, "../studio/sanity"),
     },
   },
 });
